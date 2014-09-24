@@ -1,0 +1,39 @@
+Sample Slide
+
+John Doe
+johnNOSPAM@gmail.com
+@notwitterhandlelikethisshouldexist
+
+* Heading 1
+** Heading 2
+*** Heading 3
+
+*    Heading 1
+**   Heading 2
+***  Heading 3
+
+
+_italic_text_
+*bold*text*
+`program`
+
+Basic slide text `some code` and more with *bold* and _italic_
+
+	Code Block
+	Text Example
+
+- List Item 1
+- List Item 2
+
+.link http://google.com Google
+
+.play code/main.go
+.play code/main.go /START OMIT/,/END OMIT/
+
+.code code/main.go
+.code code/main.go /START OMIT/,/END OMIT/
+
+.image image.jpg
+.iframe http://foo
+.html file.html
+.caption _Gopher_ by [[http://www.reneefrench.com][Renée French]]
