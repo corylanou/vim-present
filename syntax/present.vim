@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     Present (Go)
 " Maintainer:   Cory LaNou <coryNOSPAM@lanou.com>
-" Filenames:    *.present
+" Filenames:    *.present,*.article
 " Last Change:	2014 Sep 23
 
 if exists("b:current_syntax")
@@ -15,21 +15,23 @@ syn case ignore
 
 syn match presentHeading "^\*\s[^\*].*$"
 
-syn match presentPlay "^\.play"
-syn match presentLink "^\.link"
-syn match presentCode "^\.code"
 
-syn region presentCodeBlock start="    \|\t" end="$" contained
+syn region presentPlay matchgroup=presentCommand start="^\.play" end="$" oneline contains=presentPlayOmit
+syn region presentCode matchgroup=presentCommand start="^\.code" end="$" oneline contains=presentPlayOmit
+syn match presentPlayOmit "\s/.*/$" contained
 
-syn match presentUrl "\S\+" nextgroup=presentUrlTitle skipwhite contained
+syn region presentLink matchgroup=presentCommand start="^\.link" end="$" oneline contains=presentUrl
+
+syn region presentCodeBlock start="^\s" end="$"
 
 let b:current_syntax = "present"
 
 hi def link presentHeading                    htmlH1
-hi def link presentPlay                       htmlLink
-hi def link presentLink                       htmlLink
-hi def link presentCode                       htmlLink
-hi def link presentUrl                        Float
-hi def link presentUrlTitle                   String
+hi def link presentCommand                    Delimiter
 
-" vim:set sw=2:
+hi def link presentPlay                       Type
+hi def link presentCode                       Type
+hi def link presentLink                       Type
+
+hi def link presentPlayOmit                   htmlTag
+hi def link presentCodeBlock                  Statement
