@@ -15,6 +15,7 @@ syn case ignore
 
 syn match presentBold "\*\S+\*"
 syn match presentItalic "_\S+_"
+syn match presentComment "#.*$"
 
 syn match presentH1 "^\*\s.*$"
 syn match presentH2 "^\*\*\s.*$"
@@ -56,6 +57,8 @@ hi def link presentHtml       Type
 hi def link presentCaption    Type
 
 hi def link presentPlayOmit   htmlTag
+
+hi def link presentComment    Comment
 
 hi def link presentCodeBlock  Statement
 hi def link presentInlineCode Statement
